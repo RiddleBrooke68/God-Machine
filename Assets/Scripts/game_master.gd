@@ -4,6 +4,7 @@ extends Node
 signal loaded_preset
 signal increment_input
 signal decrement_input
+@warning_ignore("unused_signal")
 signal hover_input
 signal seed_changed
 
@@ -87,7 +88,7 @@ func _ready() -> void:
 	active_automaton.reflect(automaton_cache[automaton_index])
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 

@@ -57,5 +57,5 @@ func on_pressed() -> void:
 func on_alternate_pressed() -> void:
 	pass
 
-func on_drag(motion : Vector2) -> void:
+func on_drag(_motion : Vector2) -> void:
 	pass

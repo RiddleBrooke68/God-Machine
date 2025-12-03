@@ -100,7 +100,7 @@ func load_neighborhood_to_grid() -> void:
 	encode_grid_to_neighborhood_bytes()
 
 
-
+## Encodes the model neighborhood to byte format
 func encode_grid_to_neighborhood_bytes() -> void:
 	if not grid: return
 	neighborhood = GameMaster.get_active_automaton().get_neighborhood(neighborhood_id)

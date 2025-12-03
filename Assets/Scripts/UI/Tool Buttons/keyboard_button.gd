@@ -18,7 +18,7 @@ func _ready() -> void:
 	on_radius = base_radius
 	off_radius = base_radius
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if hovered:
 		cursor_grid.clear()
 		

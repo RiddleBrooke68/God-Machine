@@ -18,7 +18,7 @@ func _ready() -> void:
 	panel_style.bg_color = Color(1.0, 1.0, 1.0, 0.0)
 	add_theme_stylebox_override("panel", panel_style)	
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if get_parent().is_enabled():
 		panel_style.bg_color = Color(0.0, 0.0, 0.0, 0.0)
 	else:

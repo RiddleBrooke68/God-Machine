@@ -73,6 +73,7 @@ func initialize_render(framebuffer_format : int):
 
 
 
+	@warning_ignore("integer_division", "unused_variable")
 	var vertex_count = vertex_buffer.size() / 7
 
 
@@ -114,6 +115,7 @@ func initialize_render(framebuffer_format : int):
 	vertex_format = rd.vertex_format_create(vertex_attrs)
 
 
+	@warning_ignore("integer_division")
 	p_vertex_array = rd.vertex_array_create(vertex_buffer.size() / stride, vertex_format, vertex_buffers)
 
 	var index_buffer_bytes : PackedByteArray = index_buffer.to_byte_array()
@@ -188,6 +190,7 @@ func _render_callback(_effect_callback_type : int, render_data : RenderData):
 		var MVP = projection * model_view;
 		
 		for i in range(0,16):
+			@warning_ignore("integer_division")
 			uniform_buffer_data.push_back(MVP[i / 4][i % 4])
 	
 

@@ -125,12 +125,14 @@ func _render_callback(p_effect_callback_type, p_render_data):
 
 		# Dispatch the compute kernel
 		if (needs_seeding):
+			@warning_ignore("integer_division")
 			exposure_compute.dispatch(0, 1024 / 8, 1024 / 8, 1)
 			needs_seeding = false
 
 			for i in range(0, cook_time - 1):
 				if GameMaster.get_seed() == 42069: break
 
+				@warning_ignore("integer_division")
 				exposure_compute.dispatch(1, 1024 / 8, 1024 / 8, 1)
 
 				var temp : RID = previous_generation
@@ -144,6 +146,7 @@ func _render_callback(p_effect_callback_type, p_render_data):
 		if (timer > GameMaster.get_time_setting() or GameMaster.next_generation()):
 			timer = 0.0
 
+			@warning_ignore("integer_division")
 			exposure_compute.dispatch(1, 1024 / 8, 1024 / 8, 1)
 
 			var temp : RID = previous_generation
